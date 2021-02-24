@@ -35,8 +35,6 @@ import json
 import sys
 
 
-def add(x,y):
-    return x+y
 
 def fixdate(d):
     # sublimate Date
