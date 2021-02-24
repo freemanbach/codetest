@@ -34,6 +34,9 @@ import json
 import sys
 
 
+def add(x,y):
+    return x+y
+
 def fixdate(d):
     # sublimate Date
     dateitem = datetime(year=int(d[0:4]), month=int(d[4:6]), day=int(d[6:8]))
