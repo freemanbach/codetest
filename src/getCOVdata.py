@@ -12,9 +12,10 @@ example    : python3 getCOVdata.py all
 
 
 # global variable for state abbr codes
-scode = ['al',  'ca', 'co',  'fl', 'ga', 'hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma', 'md', 'me', 'mi', 'mn', 'mo',
+scode = ['al',  'ca', 'co',  'fl',  'hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma', 'md', 'me', 'mi', 'mn', 'mo',
         'ms', 'mt', 'nc', 'nd', 'ne', 'nh', 'nj', 'nm', 'nv', 'ny', 'oh', 'ok', 'or', 'pa',  'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'va', 'vt', 'wa', 'wi',  'wv', 'wy' ]
 
+add(3,4)
 
 try:
     from tqdm import trange, tqdm
