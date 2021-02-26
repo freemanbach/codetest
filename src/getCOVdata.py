@@ -33,6 +33,8 @@ from datetime import datetime
 import json
 import sys
 
+def sub(x,y):
+    return x -y
 
 
 def fixdate(d):
