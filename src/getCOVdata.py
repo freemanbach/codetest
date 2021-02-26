@@ -12,7 +12,7 @@ example    : python3 getCOVdata.py all
 
 
 # global variable for state abbr codes
-scode = ['al',  'ca', 'co',  'fl',  'hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma', 'md', 'me', 'mi', 'mn', 'mo',
+scode = ['hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma', 'md', 'me', 'mi', 'mn', 'mo',
         'ms', 'mt', 'nc', 'nd', 'ne', 'nh', 'nj', 'nm', 'nv', 'ny', 'oh', 'ok', 'or', 'pa',  'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'va', 'vt', 'wa', 'wi',  'wv', 'wy' ]
 
 
@@ -77,7 +77,7 @@ def processJSON(jsdata):
     # more data Attributes to consider in the future, perhaps
     # date, positive, hospitalizedCumulative, death, deathConfirmed, positiveIncrease, total
     # vapos, vahospcum, vaposinc, vahospinc = [], [], [], [], [], [], []
-    vadate,  vadeath, vadeathconfirm = [], [], [] 
+    vadate,  vadeath, vadeathconfirm = [], [], []
     data = json.loads(jsdata)
     for i in data:
         if len(str(i['date'])) == 8:
@@ -96,19 +96,19 @@ def processJSON(jsdata):
     vadeath.reverse()
 
     return vadate, vadeath, vadeathconfirm
-    
+
 
 def writeData( a, b, c, nf ):
     # heading for csv file to prep for plotly.JS
     # Date,VADATA.Death,VADATA.DeathConfirmed
     data = []
-    fn = nf.strip() + "data.csv" 
+    fn = nf.strip() + "data.csv"
     for i in list(range(0, len(a))):
         m = str(a[i]).strip() + "," + str(b[i]).strip() + "," + str(c[i]).strip() + "\n"
         data.append(m)
 
     head = "Date,"+ nf.upper() + "DATA.Death," +  nf.upper() + "DATA.DeathConfirmed\n"
-    
+
     data.insert(0, head)
     with open(fn, "w+") as f:
         for i in tqdm(data, total=len(data), desc=fn):
